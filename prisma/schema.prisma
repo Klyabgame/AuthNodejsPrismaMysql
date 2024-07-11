@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model tb_auth {
+  id_auth        String  @id @db.VarChar(255)
+  correo          String  @db.VarChar(35)
+  correo_validado Boolean @default(false)
+  password        String  @db.VarChar(255)
+  foto_url        String? @db.VarChar(255)
+  nombres         String  @db.VarChar(35)
+  apellidos       String  @db.VarChar(45)
+  telefono        String? @db.VarChar(10)
+}
+
